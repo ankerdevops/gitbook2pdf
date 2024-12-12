@@ -49,21 +49,30 @@ pip install -r requirements.txt
 
 ## 使用
 
-```sh
-python gitbook.py {url}
+### 使用 Docker
+```shell
+docker run -it -v `pwd`/output:/app/output zhangwenjie/gitbook2pdf <your url> <filename.pdf>
 ```
 
-## 运行测试
-
-```sh
-python gitbook.py http://self-publishing.ebookchain.org
+### 使用 Python
+```shell
+pip install -r requirements.txt
+python gitbook.py <url> <filename.pdf>
 ```
 
 ## 定制
 
 生成的 `pdf` 风格取决于`css`文件 如果你需要添加其他风格可以通过修改`gitbook.css`文件来实现.
 
-## Author
+## 原始项目
+[原始项目地址](https://github.com/fuergaosi233/gitbook2pdf)
+
+## 警告 ⚠️
+
+使用 `weasyprint` 来生成 pdf 文件会占用大量的内存。
+所以请确保你有足够的内存空间来进行生成。
+
+## 作者
 
 👤 **fuergaosi233**
 
@@ -74,11 +83,6 @@ python gitbook.py http://self-publishing.ebookchain.org
 
 欢迎提供`issues`, 以及`pr`。[issues page](https://github.com/fuergaosi233/gitbook2pdf/issues).
 
-## 给点支持
+## 支持
 
 如果这个工具帮到你了，那就请宁给我个 ⭐️ 口巴。
-
-## warning⚠️
-
-使用 `weasyprint` 来生成 pdf 文件会占用大量的内存。
-所以请确保你有足够的内存空间来进行生成。
